@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "元素尺 · 悬停测量与红框钉住",
+  "version": "1.0.0",
+  "description": "悬停任意元素实时显示宽高，超过阈值自动描红；右键钉住红框，左上角持续显示实时尺寸。",
+  "minimum_chrome_version": "104",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "元素尺",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>元素尺</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>元素尺</h1>
+        <p>悬停测量 · 红框钉住</p>
+      </div>
+    </div>
+    <label class="switch" title="开启 / 关闭">
+      <input type="checkbox" id="enabled">
+      <span class="track"><span class="thumb"></span></span>
+    </label>
+  </header>
+
+  <section class="card">
+    <h2>触发条件<span class="hint">宽高同时超过才描红</span></h2>
+    <div class="fields">
+      <label class="field">
+        <span>宽 &gt;</span>
+        <input type="number" id="minWidth" min="0" max="10000" step="10" inputmode="numeric">
+        <em>px</em>
+      </label>
+      <label class="field">
+        <span>高 &gt;</span>
+        <input type="number" id="minHeight" min="0" max="10000" step="10" inputmode="numeric">
+        <em>px</em>
+      </label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>检测元素</h2>
+    <div class="chips" id="tags"></div>
+  </section>
+
+  <section class="card">
+    <h2>钉住<span class="hint">右键钉住 / 解除</span></h2>
+    <div class="pin-row">
+      <div class="pin-count">
+        <strong id="pinCount">0</strong>
+        <span>个已钉住</span>
+      </div>
+      <button type="button" class="btn-ghost" id="clearPins">全部清除</button>
+    </div>
+    <p class="status" id="pageStatus">正在读取当前页面…</p>
+  </section>
+
+  <footer class="foot">
+    <span><kbd>悬停</kbd> 测尺寸</span>
+    <span class="sep"></span>
+    <span><kbd>右键</kbd> 钉住</span>
+    <span class="sep"></span>
+    <span><kbd>×</kbd> 解除</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
